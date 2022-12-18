@@ -1,0 +1,93 @@
+
+h1{
+    color: rgb(8, 44, 44);
+    text-transform: capitalize;
+    text-align: center;
+font-style: italic;
+font-size: 40px ;
+}
+.main{
+  display:grid;
+  place-items: center;
+}
+h2{
+  color:rgb(7, 58, 58);
+  text-align: top;
+  font-size: 20px ;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 0%;
+  
+}
+h3{
+  margin-top: 0%;
+  color:rgb(7, 58, 58);
+  text-align:center;
+  font-size: 15px ;
+  font-style: italic;
+  text-transform: uppercase;
+}
+ .music_content{
+  display:grid;
+  place-items:center;
+  height: 30rem;
+  width:25rem;
+  padding: 15px;
+  box-shadow:0 1.2rem 3rem 0.3rem rgb(83, 83, 61);
+  background-color: lavender;
+  border-radius: 2rem;
+  text-align: center;
+
+}
+  
+  
+.image_content{
+  height:90% ;
+  width: 90%;
+  padding: 5px;
+  
+
+
+
+}
+img{
+border-style: groove;
+height:90%;
+width: 70%;
+border-radius: 50% ;
+image-resolution: 10%;
+}
+.music_control {
+  cursor: pointer;
+  font-size:30px;
+box-shadow: rgb(36, 37, 37);
+display: flex;
+justify-content: space-evenly;
+border-style: groove;
+border-width: 2px;
+border-radius: 10px;
+border-width: thick;
+padding-left: 5px;
+padding-right:5px;
+box-sizing: content-box;
+}
+
+#previous:hover{
+  color: rgb(109, 105, 101);
+
+}
+#next:hover{
+  color:rgb(109, 105, 101);
+
+}
+#play:hover{
+ color: rgb(109, 105, 101);
+}
+.anime{
+  animation: rotateplayer 5s linear infinite;
+}
+@keyframes rotateplayer{
+  from{transform: rotate(0deg);
+  }
+  to{transform: rotate(360deg);}
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>MUSIC PLAYER</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta charset="UTF-8">
+<meta name="viewport" content ="width =device width,initial scale=1.0"> 
+<link  rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" href="C:\Users\Charu jain\Documents\HTML\music.png" type="image/png">
+
+
+    </head>
+    <body>
+        <h1>play your favorite music here</h1>
+<div class="main">      
+<div class="music_content">
+    
+    <h2> Track</h2>
+    
+    <h3 id="title">i guess i'm just a play date to you</h3>
+    
+
+    <div class="image_content ">
+    <img src="./music.jpg" alt=" ">
+
+    
+        <audio src="music1.mp3"  ></audio>
+        <audio src="music2.mp3"  ></audio>
+        <audio src="music3.mp3"  ></audio>
+
+       
+        <div class="music_control">
+            <i class="fas fa-backward" id="previous" title="previous"></i>
+            <i class=" fas fa-play" id="play" title="play"></i>
+            <i class="fas fa-forward" id="next" title="next"></i>
+            
+        </div>
+  </div>
+ </div>
+     </div>  
+     <script>
+        const music=document.querySelector("audio");
+        const title=document.getElementById("title");
+        const play=document.getElementById("play");
+        const previous=document.getElementById("previous");
+        const next=document.getElementById("next");
+        const img=document.querySelector("img");
+        const songs=    [ {name:"music1",
+        title:"I guess i'm a play date to you",},
+        {name:"music2",
+    title:"memories",},
+    {name:"music3",
+title:"girls like you",},];
+       
+    let isplaying = false;
+    const playmusic = ()=>{
+ isplaying =true;
+        music.play();
+        play.classList.replace("fa-play","fa-pause");
+        img.classList.add("anime");};
+    
+        const pausemusic=()=>{
+            isplaying=false;
+        music.pause();
+        play.classList.replace("fa-pause","fa-play");
+        img.classList.remove("anime");};
+ 
+        play.addEventListener("click" , () => {
+            if(isplaying)
+            {pausemusic();}
+            else
+            {playmusic();}
+           });
+        
+        songindex=0;
+        const loadsongs=(songs)=>{
+               title.textContent=songs.title;
+               music.src = songs.name +".mp3";
+           };
+        const nextsong=()=>{
+               songindex=(songindex+1)%songs.length;
+               loadsongs(songs[songindex]);
+               playmusic();
+           } ;
+           const previoussong=()=>{
+               songindex=(songindex-1+songs.length)%songs.length;
+               loadsongs(songs[songindex]);
+               playmusic();
+           };
+              
+       
+            
+           
+           next.addEventListener("click",() => {nextsong()});
+           previous.addEventListener("click",() =>{previoussong()});
+           
+          
+    </script>
+    </body>
+</html>
